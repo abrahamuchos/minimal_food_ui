@@ -16,5 +16,7 @@ class AppColors {
     900: Color(0xFF0A1A42),
   });
 
+  static const Color secondary = Color(0xFF1E3C72);
+
 
 }
