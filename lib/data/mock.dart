@@ -1,3 +1,4 @@
+import 'package:minimal_food_ui/data/models/category.dart';
 import 'package:minimal_food_ui/data/models/product.dart';
 
 class Mock {
@@ -186,11 +187,33 @@ class Mock {
         'assets/images/products/strawberry_cheesecake_2.jpeg',
       ],
     ),
+  ];
 
-
-
-
-
+  static final List<Category> categories = [
+    Category(
+      id: 1,
+      name: 'meat',
+      emoji: '🥩',
+    ),
+    Category(
+      id: 2,
+      name: 'fast food',
+      emoji: '🍔',
+    ),
+    Category(
+      id: 2,
+      name: 'Sushi',
+      emoji: '🍣',
+    ),
+    Category(
+      id: 2,
+      name: 'salads',
+      emoji: '🥗',
+    ),
+    Category(
+      id: 2,
+      name: 'dessert',
+      emoji: '🍰',
+    ),
   ];
 }
-
