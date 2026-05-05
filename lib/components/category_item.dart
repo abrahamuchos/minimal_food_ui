@@ -20,7 +20,16 @@ class CategoryItem extends StatelessWidget {
           height: 80,
           width: 80,
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(16)),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withAlpha(3),
+                spreadRadius: 1,
+                blurRadius: 10,
+              ),
+            ]
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
