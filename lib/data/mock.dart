@@ -202,7 +202,7 @@ class Mock {
     ),
     Category(
       id: 2,
-      name: 'Sushi',
+      name: 'sushi',
       emoji: '🍣',
     ),
     Category(
