@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_food_ui/components/category_item.dart';
+import 'package:minimal_food_ui/core/theme/app_colors.dart';
 import 'package:minimal_food_ui/data/mock.dart';
 import 'package:minimal_food_ui/utils/string.dart';
 
@@ -18,9 +19,155 @@ class HomeScreen extends StatelessWidget {
             buildHeader(),
             //Categories
             buildCategories(),
+            //Promotional Banner
+            buildPromotionalBanner(),
           ],
         ),
       ),
+    );
+  }
+
+  Container buildPromotionalBanner() {
+    return Container(
+      width: double.infinity,
+      // height: 100,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            AppColors.primarySwatch.shade500,
+            AppColors.primarySwatch.shade400,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primarySwatch.shade500.withAlpha(70),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: Stack(children: [
+        //Background decorative element
+        Positioned(
+          right: -20,
+          top: -20,
+          child: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withAlpha(35),
+            ),
+          ),
+        ),
+        Positioned(
+          right: -15,
+          top: -15,
+          child: Container(
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withAlpha(35),
+            ),
+          ),
+        ),
+        Positioned(
+          left: 55,
+          top: 55,
+          child: Container(
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withAlpha(25),
+            ),
+          ),
+        ),
+        //Content
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              //Info and CTA
+              Expanded(
+                flex: 3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white.withAlpha(100),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 2),
+                      child: Text(
+                        'limited offer'.toUpperCase(),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 7,
+                    ),
+                    Text(
+                      '30% off'.toUpperCase(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'On your first order',
+                      style: TextStyle(
+                        color: Colors.white.withAlpha(230),
+                        fontSize: 14,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    //CTA
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          foregroundColor: AppColors.primarySwatch.shade500,
+                          backgroundColor: Colors.white,
+                          textStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      child: Text('Order Now'),
+                    ),
+                  ],
+                ),
+              ),
+              //Image
+              Expanded(
+                flex: 2,
+                child: Transform.translate(
+                  offset: Offset(15, 42),
+                  child: (Image.asset(
+                    'assets/images/chef/birthday.png',
+                    width: 155,
+                  )),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ]),
     );
   }
 
