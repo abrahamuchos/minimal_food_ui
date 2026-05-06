@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_food_ui/components/category_item.dart';
+import 'package:minimal_food_ui/components/product_item.dart';
 import 'package:minimal_food_ui/core/theme/app_colors.dart';
 import 'package:minimal_food_ui/data/mock.dart';
 import 'package:minimal_food_ui/utils/string.dart';
@@ -21,6 +22,55 @@ class HomeScreen extends StatelessWidget {
             buildCategories(),
             //Promotional Banner
             buildPromotionalBanner(),
+            SizedBox(
+              height: 15,
+            ),
+            //Best Sellers
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Best Sellers',
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'See All',
+                    style: TextStyle(
+                      color: AppColors.primarySwatch.shade500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            //Best Sellers Items
+            GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.64,
+                ),
+                itemCount: Mock.products.length,
+                itemBuilder: (context, index) {
+                  final product = Mock.products[index];
+                  return ProductItem(
+                    title: product.title,
+                    price: product.price,
+                    time: product.time,
+                    imgSrc: product.images.first,
+                  );
+                }),
           ],
         ),
       ),
