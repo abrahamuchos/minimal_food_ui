@@ -216,4 +216,51 @@ class Mock {
       emoji: '🍰',
     ),
   ];
+
+  static final List<Product> wishlistProducts = [
+    Product(
+      title: 'BBQ Pork Ribs',
+      price: '\$18.50',
+      time: '35 min',
+      images: [
+        'assets/images/products/bbq_pork_ribs_1.jpeg',
+      ],
+    ),
+    Product(
+      title: 'Greek Quinoa Bowl',
+      price: '\$10.20',
+      time: '12 min',
+      images: [
+        'assets/images/products/greek_quinoa_bowl_1.jpeg',
+      ],
+    ),
+    Product(
+      title: 'Mushroom Risotto',
+      price: '\$14.00',
+      time: '25 min',
+      images: [
+        'assets/images/products/mushroom_risotto_1.jpeg',
+        'assets/images/products/mushroom_risotto_2.jpeg',
+      ],
+    ),
+    Product(
+      title: 'Club Sandwich',
+      price: '\$8.75',
+      time: '10 min',
+      images: [
+        'assets/images/products/club_sandwich_1.jpeg',
+        'assets/images/products/club_sandwich_2.jpeg',
+      ],
+    ),
+    Product(
+      title: 'Falafel Platter',
+      price: '\$9.50',
+      time: '15 min',
+      images: [
+        'assets/images/products/falafel_platter_1.jpeg',
+        'assets/images/products/falafel_platter_2.jpeg',
+      ],
+    ),
+
+  ];
 }
