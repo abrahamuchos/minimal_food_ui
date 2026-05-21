@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_food_ui/components/cart_item.dart';
+import 'package:minimal_food_ui/components/promo_code.dart';
 import 'package:minimal_food_ui/data/mock.dart';
 import 'package:minimal_food_ui/data/models/item.dart';
 
@@ -15,17 +16,35 @@ class CartScreen extends StatelessWidget {
       appBar: buildAppBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: cartItems.length,
-          itemBuilder: (BuildContext context, int index) {
-            return CartItem(
-              title: cartItems[index].title,
-              price: cartItems[index].price,
-              imgSrc: cartItems[index].imageSrc,
-              qty: cartItems[index].qty,
-            );
-          },
+        child: Column(
+          children: [
+            //Cart Item List
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: cartItems.length,
+              itemBuilder: (BuildContext context, int index) {
+                return CartItem(
+                  //TODO: Agregar espacios entre cart items
+                  title: cartItems[index].title,
+                  price: cartItems[index].price,
+                  imgSrc: cartItems[index].imageSrc,
+                  qty: cartItems[index].qty,
+                );
+              },
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            //Promo code
+            PromoCode(),
+            SizedBox(
+              height: 15,
+            ),
+            //Order Info
+            Container(
+
+            ),
+          ],
         ),
       ),
     );
