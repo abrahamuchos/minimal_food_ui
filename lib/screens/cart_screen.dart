@@ -33,7 +33,6 @@ class CartScreen extends StatelessWidget {
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 12),
                           child: CartItem(
-                            //TODO: Agregar espacios entre cart items
                             title: cartItems[index].title,
                             price: cartItems[index].price,
                             imgSrc: cartItems[index].imageSrc,
