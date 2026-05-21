@@ -100,7 +100,6 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       child: Stack(children: [
-        //Background decorative element
         Positioned(
           right: -20,
           top: -20,
