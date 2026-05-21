@@ -10,10 +10,17 @@ class PromoCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 3),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(20),
+            blurRadius: 8,
+            offset: Offset(0, 2),
+          )
+        ],
       ),
       child: Row(
         children: [
@@ -31,12 +38,14 @@ class PromoCode extends StatelessWidget {
                 hintText: "Promo code",
                 hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                 border: InputBorder.none,
+                isDense: true,
               ),
             ),
           ),
           SizedBox(
             width: 5,
           ),
+          // Apply – CTA
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
@@ -44,6 +53,7 @@ class PromoCode extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
+              padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 2),
             ),
             child: Text(
               'Apply',
