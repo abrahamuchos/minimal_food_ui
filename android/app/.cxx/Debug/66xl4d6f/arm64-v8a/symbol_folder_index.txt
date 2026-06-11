@@ -1,0 +1,1 @@
+/Users/abraham/Documents/Cursos/Dart/minimal_food_ui/build/app/intermediates/cxx/Debug/66xl4d6f/obj/arm64-v8a
