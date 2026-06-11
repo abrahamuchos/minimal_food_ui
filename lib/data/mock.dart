@@ -1,4 +1,5 @@
 import 'package:minimal_food_ui/data/models/category.dart';
+import 'package:minimal_food_ui/data/models/item.dart';
 import 'package:minimal_food_ui/data/models/product.dart';
 
 class Mock {
@@ -261,6 +262,42 @@ class Mock {
         'assets/images/products/falafel_platter_2.jpeg',
       ],
     ),
+  ];
 
+  static final List<Item> cartItems = [
+    Item(
+      title: 'BBQ Pork Ribs',
+      price: '\$18.50',
+      imageSrc: 'assets/images/products/bbq_pork_ribs_1.jpeg',
+      qty: 1,
+    ),
+    Item(
+      title: 'Club Sandwich',
+      price: '\$8.75',
+      imageSrc: 'assets/images/products/club_sandwich_1.jpeg',
+      qty: 2,
+    ),Item(
+      title: 'BBQ Pork Ribs',
+      price: '\$18.50',
+      imageSrc: 'assets/images/products/bbq_pork_ribs_1.jpeg',
+      qty: 1,
+    ),
+    Item(
+      title: 'Club Sandwich',
+      price: '\$8.75',
+      imageSrc: 'assets/images/products/club_sandwich_1.jpeg',
+      qty: 2,
+    ),Item(
+      title: 'BBQ Pork Ribs',
+      price: '\$18.50',
+      imageSrc: 'assets/images/products/bbq_pork_ribs_1.jpeg',
+      qty: 1,
+    ),
+    Item(
+      title: 'Club Sandwich',
+      price: '\$8.75',
+      imageSrc: 'assets/images/products/club_sandwich_1.jpeg',
+      qty: 2,
+    ),
   ];
 }
